@@ -39,19 +39,24 @@ class Rat
 
 class Main{
     public static void main(String[] args) {
-
-    int n = 4;
-    int[][] a = {{1,0,0,0},{1,1,0,1},{1,1,0,0},{0,1,1,1}};
-
-    Rat obj = new Rat();
-    ArrayList < String > res = obj.findpath(a, n);
-    if (res.size() > 0) {
-      for (int i = 0; i < res.size(); i++)
-        System.out.print(res.get(i) + " ");
-      System.out.println();
-    } else {
-      System.out.println(-1);
-    }
+        Scanner sc=new Scanner(System.in);
+        int n = sc.nextInt();
+        int[][] a = new int[n][n];
+        for(int i=0;i<n;i++){
+            for(int j=0;j<n;j++){
+                a[i][j]=sc.nextInt();
+            }
+        }
+        Rat obj = new Rat();
+        ArrayList < String > res = obj.findpath(a, n);
+        if (res.size() > 0) {
+            for (int i = 0; i < res.size(); i++)
+            System.out.print(res.get(i) + " ");
+            System.out.println();
+        }
+        else {
+            System.out.println(-1);
+        }
   }
 }
 
